@@ -1,24 +1,18 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Home from './Home/home.js';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import "@fontsource/gothic-a1"; // Defaults to weight 400
+import "@fontsource/gothic-a1/700.css"; // Specify weight
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/home' element={<Home />} />
+      </Routes>
+    </Router>
   );
 }
 
